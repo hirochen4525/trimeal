@@ -76,35 +76,47 @@ export default function CounselingBooking() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="w-full">
+              <div className="flex justify-center">
                 <Calendar
                   mode="single"
                   selected={selectedDate}
                   onSelect={setSelectedDate}
                   disabled={(date) => date < new Date() || date.getDay() === 0}
-                  className="rounded-md border w-full"
-                  classNames={{
-                    months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
-                    month: "space-y-4",
-                    caption: "flex justify-center pt-1 relative items-center",
-                    caption_label: "text-sm font-medium",
-                    nav: "space-x-1 flex items-center",
-                    nav_button: "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100",
-                    nav_button_previous: "absolute left-1",
-                    nav_button_next: "absolute right-1",
-                    table: "w-full border-collapse space-y-1",
-                    head_row: "flex",
-                    head_cell: "text-muted-foreground rounded-md w-8 font-normal text-[0.8rem] flex-1 text-center",
-                    row: "flex w-full mt-2",
-                    cell: "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 flex-1",
-                    day: "h-8 w-8 p-0 font-normal aria-selected:opacity-100 hover:bg-accent hover:text-accent-foreground rounded-md mx-auto",
-                    day_selected:
-                      "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
-                    day_today: "bg-accent text-accent-foreground",
-                    day_outside: "text-muted-foreground opacity-50",
-                    day_disabled: "text-muted-foreground opacity-50",
-                    day_range_middle: "aria-selected:bg-accent aria-selected:text-accent-foreground",
-                    day_hidden: "invisible",
+                  className="rounded-md border"
+                  styles={{
+                    months: { display: "flex", flexDirection: "column" },
+                    month: { margin: "0.5rem" },
+                    table: { width: "100%", borderCollapse: "separate", borderSpacing: "2px" },
+                    head_row: { display: "flex", justifyContent: "space-around" },
+                    head_cell: {
+                      width: "2.5rem",
+                      height: "2.5rem",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "0.875rem",
+                      fontWeight: "normal",
+                    },
+                    row: { display: "flex", justifyContent: "space-around", marginTop: "2px" },
+                    cell: {
+                      width: "2.5rem",
+                      height: "2.5rem",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      position: "relative",
+                    },
+                    day: {
+                      width: "2.25rem",
+                      height: "2.25rem",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: "0.375rem",
+                      fontSize: "0.875rem",
+                      cursor: "pointer",
+                      transition: "all 0.2s",
+                    },
                   }}
                 />
               </div>
