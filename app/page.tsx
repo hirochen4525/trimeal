@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, Users, Brain, Trophy, ArrowRight, Star } from "lucide-react"
+import { CheckCircle, Brain, ArrowRight, Star, TrendingUp, Shield, Heart } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function LandingPage() {
   return (
@@ -36,8 +37,9 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto text-center max-w-4xl">
+      <section className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-background z-0" />
+        <div className="container mx-auto text-center max-w-4xl relative z-10">
           <Badge variant="secondary" className="mb-6">
             AI × 専属トレーナーによる食事改善プログラム
           </Badge>
@@ -51,37 +53,81 @@ export default function LandingPage() {
             <br />
             AIによる食事分析と認定トレーナーの伴走で、体系的な食リテラシーを習得
           </p>
-          <Button size="lg" className="text-lg px-8 py-6" asChild>
-            <Link href="/counseling">
-              無料カウンセリングはこちら
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <Button size="lg" className="text-lg px-8 py-6" asChild>
+              <Link href="/counseling">
+                無料カウンセリングはこちら
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <Shield className="h-4 w-4" />
+              <span>完全無料・勧誘なし</span>
+            </div>
+          </div>
+          <div className="relative max-w-2xl mx-auto">
+            <Image
+              src="/hero-healthy-meal-planning.png"
+              alt="健康的な食事プランニングのイメージ"
+              width={800}
+              height={500}
+              className="rounded-2xl shadow-2xl"
+              priority
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-primary">95%</div>
+              <div className="text-sm text-muted-foreground">継続率</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-primary">-8.2kg</div>
+              <div className="text-sm text-muted-foreground">平均減量</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-primary">3ヶ月</div>
+              <div className="text-sm text-muted-foreground">平均達成期間</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-primary">98%</div>
+              <div className="text-sm text-muted-foreground">満足度</div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Problems Section */}
-      <section className="py-16 px-4 bg-muted/30">
+      <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-foreground mb-12">こんな悩みはありませんか？</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-6">
+            <Card className="p-6 relative">
               <CardContent className="pt-0">
+                <div className="text-4xl mb-4">😰</div>
                 <p className="text-lg text-muted-foreground">カロリー計算が続かない...</p>
               </CardContent>
             </Card>
-            <Card className="p-6">
+            <Card className="p-6 relative">
               <CardContent className="pt-0">
+                <div className="text-4xl mb-4">🤔</div>
                 <p className="text-lg text-muted-foreground">何が正しい食事か分からない...</p>
               </CardContent>
             </Card>
-            <Card className="p-6">
+            <Card className="p-6 relative">
               <CardContent className="pt-0">
+                <div className="text-4xl mb-4">😔</div>
                 <p className="text-lg text-muted-foreground">ダイエットしてもリバウンドしてしまう...</p>
               </CardContent>
             </Card>
-            <Card className="p-6">
+            <Card className="p-6 relative">
               <CardContent className="pt-0">
+                <div className="text-4xl mb-4">😣</div>
                 <p className="text-lg text-muted-foreground">食事制限がストレスになる...</p>
               </CardContent>
             </Card>
@@ -90,13 +136,17 @@ export default function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section id="about" className="py-20 px-4">
+      <section id="about" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-foreground mb-4">TriMealが選ばれる3つの理由</h2>
+            <p className="text-lg text-muted-foreground">
+              科学的根拠に基づいた食事改善で、一生モノのスキルを身につける
+            </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center p-8">
+            <Card className="text-center p-8 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-20 h-20 bg-primary/5 rounded-full -translate-y-10 translate-x-10" />
               <CardHeader>
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Brain className="h-8 w-8 text-primary" />
@@ -110,10 +160,11 @@ export default function LandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center p-8">
+            <Card className="text-center p-8 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-20 h-20 bg-primary/5 rounded-full -translate-y-10 translate-x-10" />
               <CardHeader>
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-primary" />
+                  <TrendingUp className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle className="text-xl">体系的プログラム</CardTitle>
               </CardHeader>
@@ -124,10 +175,11 @@ export default function LandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center p-8">
+            <Card className="text-center p-8 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-20 h-20 bg-primary/5 rounded-full -translate-y-10 translate-x-10" />
               <CardHeader>
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Trophy className="h-8 w-8 text-primary" />
+                  <Heart className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle className="text-xl">卒業できる</CardTitle>
               </CardHeader>
@@ -141,13 +193,66 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* How it Works Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-foreground mb-4">TriMealの仕組み</h2>
+            <p className="text-lg text-muted-foreground">AIと人の力を組み合わせた、新しい食事改善アプローチ</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-primary-foreground font-bold text-sm">1</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">食事を撮影・記録</h3>
+                  <p className="text-muted-foreground">スマホで食事を撮影するだけ。面倒なカロリー計算は不要です。</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-primary-foreground font-bold text-sm">2</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">AIが瞬時に分析</h3>
+                  <p className="text-muted-foreground">栄養バランス、カロリー、改善点をAIが自動で分析・提案します。</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-primary-foreground font-bold text-sm">3</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">トレーナーが個別指導</h3>
+                  <p className="text-muted-foreground">
+                    認定トレーナーがAI分析を基に、あなたに最適なアドバイスを提供。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <Image
+                src="/ai-meal-analysis-demo.png"
+                alt="AI食事分析のデモ画面"
+                width={600}
+                height={400}
+                className="rounded-2xl shadow-xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section id="testimonials" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-foreground mb-4">お客様の声・実績</h2>
+            <p className="text-lg text-muted-foreground">実際にTriMealで食生活を変えた方々の体験談</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="p-6">
               <CardHeader>
                 <div className="flex items-center space-x-4">
@@ -193,6 +298,29 @@ export default function LandingPage() {
                 </CardDescription>
               </CardContent>
             </Card>
+
+            <Card className="p-6">
+              <CardHeader>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <span className="text-primary font-semibold">M.Y</span>
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg">20代女性・看護師</CardTitle>
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base leading-relaxed">
+                  「夜勤がある不規則な生活でも、無理なく食事改善できました。体調も良くなり、仕事のパフォーマンスも向上しました。」
+                </CardDescription>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -202,6 +330,7 @@ export default function LandingPage() {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-foreground mb-4">ご利用の流れ</h2>
+            <p className="text-lg text-muted-foreground">簡単3ステップで始められます</p>
           </div>
           <div className="space-y-8">
             <div className="flex items-center space-x-6">
@@ -239,13 +368,17 @@ export default function LandingPage() {
       <section id="pricing" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-foreground mb-12">料金プラン</h2>
-          <Card className="max-w-md mx-auto p-8">
+          <Card className="max-w-md mx-auto p-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-sm font-semibold rounded-bl-lg">
+              人気No.1
+            </div>
             <CardHeader>
               <CardTitle className="text-2xl">スタンダードプラン</CardTitle>
               <div className="text-4xl font-bold text-primary">
                 ¥33,000
                 <span className="text-lg text-muted-foreground font-normal">/月</span>
               </div>
+              <p className="text-sm text-muted-foreground">※初月は50%OFF</p>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-3">
@@ -268,6 +401,10 @@ export default function LandingPage() {
                 <CheckCircle className="h-5 w-5 text-primary" />
                 <span>学習コンテンツ見放題</span>
               </div>
+              <div className="flex items-center space-x-3">
+                <CheckCircle className="h-5 w-5 text-primary" />
+                <span>30日間返金保証</span>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -280,12 +417,18 @@ export default function LandingPage() {
           <p className="text-xl text-muted-foreground mb-8">
             あなたの食生活の課題を明確にし、最適な改善プランをご提案します
           </p>
-          <Button size="lg" className="text-lg px-8 py-6" asChild>
-            <Link href="/counseling">
-              無料カウンセリングはこちら
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button size="lg" className="text-lg px-8 py-6" asChild>
+              <Link href="/counseling">
+                無料カウンセリングはこちら
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <Shield className="h-4 w-4" />
+              <span>所要時間30分・完全無料</span>
+            </div>
+          </div>
         </div>
       </section>
 

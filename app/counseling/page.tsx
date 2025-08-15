@@ -82,42 +82,7 @@ export default function CounselingBooking() {
                   selected={selectedDate}
                   onSelect={setSelectedDate}
                   disabled={(date) => date < new Date() || date.getDay() === 0}
-                  className="rounded-md border"
-                  styles={{
-                    months: { display: "flex", flexDirection: "column" },
-                    month: { margin: "0.5rem" },
-                    table: { width: "100%", borderCollapse: "separate", borderSpacing: "2px" },
-                    head_row: { display: "flex", justifyContent: "space-around" },
-                    head_cell: {
-                      width: "2.5rem",
-                      height: "2.5rem",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: "0.875rem",
-                      fontWeight: "normal",
-                    },
-                    row: { display: "flex", justifyContent: "space-around", marginTop: "2px" },
-                    cell: {
-                      width: "2.5rem",
-                      height: "2.5rem",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      position: "relative",
-                    },
-                    day: {
-                      width: "2.25rem",
-                      height: "2.25rem",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: "0.375rem",
-                      fontSize: "0.875rem",
-                      cursor: "pointer",
-                      transition: "all 0.2s",
-                    },
-                  }}
+                  className="rounded-md border w-full max-w-sm"
                 />
               </div>
             </CardContent>
