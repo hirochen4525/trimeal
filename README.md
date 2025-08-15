@@ -1,30 +1,95 @@
-# Online meal guidance app
+# TriMeal - オンライン食事指導アプリ
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+> 食べる力を、一生の力に
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/kiyos-projects-f3bde49c/v0-online-meal-guidance-app)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/NWmm46wKxWB)
+TriMealは、AIによる食事分析と認定トレーナーの個別指導により、一生モノの食リテラシーを身につけることができるオンライン食事指導アプリです。
 
-## Overview
+## 🌟 主要機能
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+### AI × 専属トレーナー
+- 食事写真を撮影するだけでAIが栄養バランス・カロリーを自動分析
+- 認定トレーナーによる週1回の個別オンライン面談
+- 24時間チャットサポート
 
-## Deployment
+### 体系的プログラム
+- 3〜6ヶ月間の段階的カリキュラム
+- 学習コンテンツ見放題
+- 個人に最適化された食事改善プラン
 
-Your project is live at:
+### 卒業できるシステム
+- 面倒なカロリー計算は不要
+- リバウンドしない食事スキルを習得
+- 30日間返金保証
 
-**[https://vercel.com/kiyos-projects-f3bde49c/v0-online-meal-guidance-app](https://vercel.com/kiyos-projects-f3bde49c/v0-online-meal-guidance-app)**
+## 🚀 技術スタック
 
-## Build your app
+- **フレームワーク**: Next.js 15.2.4
+- **言語**: TypeScript
+- **UI**: React 19, Tailwind CSS, Radix UI
+- **スタイリング**: class-variance-authority, clsx
+- **フォーム**: React Hook Form, Zod
+- **アイコン**: Lucide React
+- **チャート**: Recharts
+- **その他**: date-fns, Sonner (Toast)
 
-Continue building your app on:
+## 📱 ページ構成
 
-**[https://v0.app/chat/projects/NWmm46wKxWB](https://v0.app/chat/projects/NWmm46wKxWB)**
+- `/` - ランディングページ
+- `/counseling` - 無料カウンセリング申込
+- `/dashboard` - ユーザーダッシュボード
+- `/meal-input` - 食事記録入力
+- `/meal-calendar` - 食事カレンダー
+- `/chat` - トレーナーとのチャット
+- `/profile` - プロフィール設定
+- `/appointments` - 面談予約
+- `/trainer/*` - トレーナー向け管理画面
 
-## How It Works
+## 🛠 開発環境セットアップ
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+```bash
+# 依存関係をインストール
+npm install --legacy-peer-deps
+
+# 開発サーバーを起動
+npm run dev
+
+# http://localhost:3000 でアクセス
+```
+
+## 📦 ビルド・デプロイ
+
+```bash
+# プロダクションビルド
+npm run build
+
+# プロダクションサーバー起動
+npm start
+
+# ESLintチェック
+npm run lint
+```
+
+## 🎯 特徴
+
+- **95%継続率**: 高い継続率を実現する体系的なプログラム設計
+- **平均-8.2kg**: 科学的根拠に基づいた効果的な食事改善
+- **98%満足度**: ユーザー満足度の高いサービス品質
+- **3ヶ月平均**: 短期間での目標達成をサポート
+
+## 💰 料金プラン
+
+**スタンダードプラン**: ¥33,000/月（初月50%OFF）
+- 専属トレーナーによる個別指導
+- AIによる食事分析
+- 週1回のオンライン面談
+- 24時間チャットサポート
+- 学習コンテンツ見放題
+- 30日間返金保証
+
+## 📞 サポート
+
+無料カウンセリング（所要時間30分・完全無料）で、現在の食生活の課題分析と最適な改善プランをご提案します。
+
+---
+
+© 2025 TriMeal. All rights reserved.
